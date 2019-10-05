@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::namespace('Front')->group(function () {
+    Route::get('/', 'IndexController@index')->name('app.index');
+});
+Route::namespace('Admin')->prefix('/admin')->group(function () { });
